@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="18dp"
+    android:layout_marginTop="24dp"
+    android:layout_marginEnd="18dp"
+    android:orientation="vertical"
+    android:weightSum="9"
+    tools:context=".events.AddNewMeeting">
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Sujet de la réunion"
+        app:endIconMode="clear_text"
+        app:startIconDrawable="@drawable/ic_about">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/about_Meeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:hint="Lieu de la réunion"
+        app:startIconDrawable="@drawable/ic_localisation">
+
+        <AutoCompleteTextView
+            android:id="@+id/meeting_localisation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_date_meeting"
+            android:padding="16dp"
+            android:text="Choisissez une date de réunion :" />
+
+        <Button
+            android:id="@+id/date_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_text"
+            android:onClick="showDatePicker"
+            android:padding="16dp"
+            android:text="date"></Button>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_text"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/date_button"
+            android:text=""
+            android:textSize="16sp"
+            android:textStyle="bold"></TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/hour_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_hour_meeting"
+            android:padding="16dp"
+            android:text="Choisissez une heure de réunion :" />
+
+        <Button
+            android:id="@+id/hour_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hour_textView"
+            android:onClick="showTimePicker"
+            android:padding="16dp"
+            android:text="HEURE" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hour_textView"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/hour_button"
+            android:text=""
+            android:textSize="16sp"
+            android:textStyle="bold"></TextView>
+
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/mails_chip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/maxime_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.PopupOverlay"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:text="@string/maxime_lamzone_com"
+                android:checkable="true"
+                app:chipIcon="@drawable/maxime"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/viviane_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.PopupOverlay"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:text="@string/viviane_lamzone_com"
+                android:checkable="true"
+                app:chipIcon="@drawable/viviane" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/amandine_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.PopupOverlay"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:text="@string/amandine_lamzone_com"
+                android:checkable="true"
+                app:chipIcon="@drawable/amandine"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/alexandra_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.PopupOverlay"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:text="@string/alexandra_lamzone_com"
+                android:checkable="true"
+                app:chipIcon="@drawable/alexandra"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/luc_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.PopupOverlay"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:text="@string/luc_lamzone_com"
+                android:checkable="true"
+                app:chipIcon="@drawable/luc"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/francois_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.PopupOverlay"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:text="@string/francois_lamzone_com"
+                android:checkable="true"
+                app:chipIcon="@drawable/francois"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <EditText
+        android:id="@+id/mails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textSize="16sp"></EditText>
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/save" />
+
+
+</LinearLayout>

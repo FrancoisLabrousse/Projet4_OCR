@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Ma réu</string>
+    <string name="Reunions">Réunions</string>
+    <string name="MesReunions">Mes Réunions</string>
+    <string name="sujet_de_la_r_union">Sujet de la réunion :</string>
+    <string name="save">Save</string>
+    <string name="liste_des_participants">Liste des participants :</string>
+    <string name="time_button">Time</string>
+    <string name="time_toast">Time</string>
+    <string name="timepicker">timePicker</string>
+    <string name="maxime_lamzone_com">maxime@lamzone.com</string>
+    <string name="viviane_lamzone_com">viviane@lamzone.com</string>
+    <string name="amandine_lamzone_com">amandine@lamzone.com</string>
+    <string name="alexandra_lamzone_com">alexandra@lamzone.com</string>
+    <string name="luc_lamzone_com">luc@lamzone.com</string>
+    <string name="francois_lamzone_com">francois@lamzone.com</string>
+
+</resources>
