@@ -68,9 +68,15 @@ public class MeetingServiceTest {
     public void getLocalisationFilterWithSuccess(){
         // verification of the location of meeting A. We must find the location "Peach"
         Meeting meetingLocationFilter = mService.getMeetings().get(0);
+<<<<<<< HEAD
         mService.addLocationFilter(meetingLocationFilter);
         assertTrue(mService.getMeetingsLocationFilters().contains(meetingLocationFilter));
         assertTrue(mService.getMeetingsLocationFilters().get(0).getLocation().equals("Peach"));
+=======
+        mService.addLocalisationFilter(meetingLocationFilter);
+        assertTrue(mService.getMeetingsLocalisationFilters().contains(meetingLocationFilter));
+        assertTrue(mService.getMeetingsLocalisationFilters().get(0).getLocalisation().equals("Peach"));
+>>>>>>> 58cf40698b6f2f074d6872a3705dc190e19a9372
     }
 
     /**
