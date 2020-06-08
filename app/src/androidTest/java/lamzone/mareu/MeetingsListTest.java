@@ -49,7 +49,7 @@ import static org.junit.Assert.*;
 public class MeetingsListTest {
 
     private MainActivity mActivity;
-    private static int ITEMS_COUNT = 3;
+    private static int ITEMS_COUNT = 4;
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule =
@@ -94,14 +94,14 @@ public class MeetingsListTest {
         onView(withId(R.id.fab)).perform(click());
         onView(withId(R.id.activity_add_meeting)).check(matches(isDisplayed()));
         onView(withId(R.id.about_Meeting)).perform(replaceText("Réunion D"));
-        onView(withId(R.id.meeting_localisation)).perform(click(replaceText("Bowser")));
+        onView(withId(R.id.meeting_location)).perform(click(replaceText("Bowser")));
         onView(withId(R.id.hour_button)).perform(click());
         setTime(10, 0);
         onView(withId(R.id.maxime_chip)).perform(click());
         onView(withId(R.id.create)).perform(click());
 
         onView(withId(R.id.item_list_aboutMeeting)).equals("Réunion D");
-        onView(withId(R.id.item_list_localisation)).equals("Bowser");
+        onView(withId(R.id.item_list_location)).equals("Bowser");
         onView(withId(R.id.item_list_hour)).equals("10H00");
         onView(withId(R.id.item_list_mails)).equals("maxime@lamzone.com");
     }
